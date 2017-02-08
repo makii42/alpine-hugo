@@ -1,6 +1,8 @@
 alpine-hugo
 ===========
 
+[![Docker Repository on Quay](https://quay.io/repository/makii42/alpine-hugo/status "Docker Repository on Quay")](https://quay.io/repository/makii42/alpine-hugo)
+
 This is a small docker image based on the incredibly small
 [alpine linux][alpine] image that can be used to build and deploy
 [hugo][hugo] websites as a container.
