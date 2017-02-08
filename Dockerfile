@@ -10,7 +10,7 @@ RUN apk add --no-cache curl nginx && \
   tar xz -C ${HUGO_DIR} -f /tmp/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
   ln -sf ${HUGO_DIR}/hugo_0.18.1_linux_amd64/hugo_0.18.1_linux_amd64 /usr/local/bin/hugo && \
   rm /tmp/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
-  mkdir /site && \
+  mkdir -p /site /run/nginx && \
   apk del --no-cache curl
 
 ADD hugo.nginx.conf /etc/nginx/conf.d/hugo.conf
@@ -19,4 +19,4 @@ WORKDIR /site
 ONBUILD ADD . /site/
 ONBUILD RUN hugo
 
-CMD ['nginx']
+CMD [ "nginx", "-g", "daemon off;" ]
