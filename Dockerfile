@@ -14,6 +14,7 @@ RUN apk add --no-cache curl nginx && \
   apk del --no-cache curl
 
 ADD hugo.nginx.conf /etc/nginx/conf.d/hugo.conf
+RUN /usr/sbin/nginx -t
 
 WORKDIR /site
 ONBUILD ADD . /site/
