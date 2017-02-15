@@ -20,4 +20,6 @@ WORKDIR /site
 ONBUILD ADD . /site/
 ONBUILD RUN hugo
 
+EXPOSE 80
+
 CMD [ "nginx", "-g", "daemon off;" ]
