@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV HUGO_VERSION 0.18.1
+ENV HUGO_VERSION 0.31.1
 ENV HUGO_DIR /usr/local/lib
 
 RUN apk add --no-cache curl nginx && \
